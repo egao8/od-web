@@ -1,0 +1,2 @@
+- [EGAlpha Restructure](project_restructure.md) — Site pivoted to institutional quant desk identity, 4 pages, monochrome, Voleon-inspired
+- [Eddie Gao](user_eddie.md) — Founder of EGAlpha, prefers institutional restraint over startup polish
