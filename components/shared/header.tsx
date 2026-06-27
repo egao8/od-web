@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
@@ -20,13 +19,24 @@ export function Header() {
     setMenuOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    if (menuOpen) {
+      document.addEventListener("keydown", handleEscape);
+      return () => document.removeEventListener("keydown", handleEscape);
+    }
+  }, [menuOpen]);
+
   const toggleTheme = () => {
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
   const navLinks = [
     { href: "/strategies", label: "Strategies" },
-    { href: "/research", label: "Research" },
+    { href: "/methodology", label: "Methodology" },
+    { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -35,17 +45,9 @@ export function Header() {
       <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-14">
           <Link href="/" className="flex items-center gap-2">
-            {mounted && resolvedTheme === "dark" ? (
-              <Image src="/logoicon.png" alt="EGAlpha" width={20} height={20} className="w-5 h-auto" priority />
-            ) : mounted && resolvedTheme === "light" ? (
-              <Image src="/logoiconlight.png" alt="EGAlpha" width={20} height={20} className="w-5 h-auto" priority />
-            ) : (
-              <div className="w-5 h-5" />
-            )}
             <span className="text-sm font-medium tracking-tight">EGAlpha</span>
           </Link>
 
-          {/* Desktop nav */}
           <nav className="hidden sm:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
@@ -66,12 +68,11 @@ export function Header() {
                 className="text-[13px] text-text-tertiary hover:text-text-secondary transition-colors ml-2"
                 aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
               >
-                {resolvedTheme === "dark" ? "Light" : "Dark"}
+                {resolvedTheme === "dark" ? (<><svg className="inline w-3.5 h-3.5 mr-1 -translate-y-px" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>Light</>) : (<><svg className="inline w-3.5 h-3.5 mr-1 -translate-y-px" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>Dark</>)}
               </button>
             )}
           </nav>
 
-          {/* Mobile menu button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="sm:hidden flex flex-col justify-center gap-[5px] w-6 h-6"
@@ -84,7 +85,6 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile nav */}
       {menuOpen && (
         <nav className="sm:hidden border-t border-border bg-background">
           <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-3">
@@ -107,7 +107,7 @@ export function Header() {
                 className="text-sm text-text-tertiary hover:text-text-secondary transition-colors text-left"
                 aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
               >
-                {resolvedTheme === "dark" ? "Light" : "Dark"}
+                {resolvedTheme === "dark" ? (<><svg className="inline w-3.5 h-3.5 mr-1 -translate-y-px" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>Light</>) : (<><svg className="inline w-3.5 h-3.5 mr-1 -translate-y-px" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>Dark</>)}
               </button>
             )}
           </div>

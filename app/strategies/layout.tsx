@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Strategies — EGAlpha",
-  description: "Six systematic intraday strategy families for US megacap equities. Mean reversion, liquidity dislocation, relative value, and more.",
+  description: "Three core systematic strategies — megacap mean-reversion, small/mid-cap momentum, and order-flow-imbalance — mechanistically distinct and near-uncorrelated.",
   openGraph: {
     title: "Strategies — EGAlpha",
-    description: "Six systematic intraday strategy families for US megacap equities.",
+    description: "Three core systematic strategies — mechanistically distinct, near-uncorrelated, each validated under a pre-registered out-of-sample protocol.",
     url: "https://egalpha.com/strategies",
   },
   twitter: {
     title: "Strategies — EGAlpha",
-    description: "Six systematic intraday strategy families for US megacap equities.",
+    description: "Three core systematic strategies — mechanistically distinct, near-uncorrelated, each validated under a pre-registered out-of-sample protocol.",
   },
   alternates: {
     canonical: "https://egalpha.com/strategies",

@@ -20,22 +20,22 @@ const siteUrl = 'https://egalpha.com';
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'EGAlpha — Quantitative Trading Research & Execution',
+    default: 'EGAlpha',
     template: '%s',
   },
-  description: 'Independent quantitative trading research and execution. Systematic intraday strategies focused on US megacap equities.',
+  description: 'Independent quantitative trading research and execution operation developing systematic US equity strategies under a pre-registered, out-of-sample research protocol.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: siteUrl,
     siteName: 'EGAlpha',
     title: 'EGAlpha — Quantitative Trading Research & Execution',
-    description: 'Independent quantitative trading research and execution. Systematic intraday strategies focused on US megacap equities.',
+    description: 'Independent quantitative trading research and execution operation developing systematic US equity strategies under a pre-registered, out-of-sample research protocol.',
   },
   twitter: {
     card: 'summary',
     title: 'EGAlpha — Quantitative Trading Research & Execution',
-    description: 'Independent quantitative trading research and execution. Systematic intraday strategies focused on US megacap equities.',
+    description: 'Independent quantitative trading research and execution operation developing systematic US equity strategies under a pre-registered, out-of-sample research protocol.',
   },
   alternates: {
     canonical: siteUrl,
