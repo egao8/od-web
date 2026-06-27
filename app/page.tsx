@@ -19,7 +19,7 @@ export default function Home() {
     description: "Independent quantitative trading research and execution operation developing systematic US equity strategies under a pre-registered, out-of-sample research protocol.",
     contactPoint: {
       "@type": "ContactPoint",
-      email: "team@egalpha.com",
+      email: "team@egalphatrades.com",
       contactType: "General inquiries",
     },
   };
@@ -129,10 +129,10 @@ export default function Home() {
               <p className="text-[11px] uppercase tracking-[0.12em] text-text-tertiary">Inquiries</p>
               <div>
                 <a
-                  href="mailto:team@egalpha.com"
+                  href="mailto:team@egalphatrades.com"
                   className="text-[15px] underline decoration-text-quaternary underline-offset-3 hover:decoration-text-secondary transition-colors"
                 >
-                  team@egalpha.com
+                  team@egalphatrades.com
                 </a>
               </div>
             </div>

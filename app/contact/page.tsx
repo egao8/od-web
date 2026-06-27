@@ -53,10 +53,10 @@ export default function Contact() {
               <p className="text-[11px] uppercase tracking-[0.12em] text-text-tertiary">General</p>
               <p className="text-[15px]">
                 <a
-                  href="mailto:team@egalpha.com"
+                  href="mailto:team@egalphatrades.com"
                   className="underline decoration-text-quaternary underline-offset-3 hover:decoration-text-secondary transition-colors"
                 >
-                  team@egalpha.com
+                  team@egalphatrades.com
                 </a>
               </p>
             </div>
